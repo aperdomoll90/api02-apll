@@ -1,8 +1,13 @@
+const functions = require("firebase-functions")
+const express = require('express')
+const { getCars, newCar, updateCar, deleteCar } = require('./src/cars')
 
-var admin = require("firebase-admin");
+const app = express()
 
-// var serviceAccount = require("p../../credentials.json");
+app.get('/cars', getCars)
+app.post('/cars', newCar)
+app.patch('/cars/:carId', updateCar)
+app.delete('/cars/:carId', deleteCar)
 
-// admin.initializeApp({
-//   credential: admin.credential.cert(serviceAccount)
-// });
+app.listen(5001)
+// exports.app = functions.https.onRequest(app)
