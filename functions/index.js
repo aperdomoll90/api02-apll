@@ -1,12 +1,8 @@
-const express = require('express')
-const functions = require("firebase-functions");
-const app = express()
 
-app.get('/test',(req,res)=> {
-    res.send('It is working!')
-})
-app.get('/test2',(req,res)=> {
-    res.send('It is working AGAIN!')
-})
+var admin = require("firebase-admin");
 
- exports.app = functions.https.onRequest(app);
+// var serviceAccount = require("p../../credentials.json");
+
+// admin.initializeApp({
+//   credential: admin.credential.cert(serviceAccount)
+// });
